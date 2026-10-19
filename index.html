@@ -36,8 +36,12 @@
           <p class="subtitle">Ang Kuwento ng Batang Resilient</p>
           <p class="intro" data-i18n="intro">Small steps. Brave choices. A school ready together.</p>
           <nav class="main-menu" aria-label="Main menu">
-            <button id="start-game" class="primary menu-button" type="button"><span data-i18n="start">Start a story</span><span aria-hidden="true">→</span></button>
-            <button id="continue-game" class="secondary menu-button" type="button" disabled><span data-i18n="continue">Continue</span><span id="continue-name"></span></button>
+            <button id="start-game" class="primary menu-button" type="button">
+              <span data-i18n="start">Start a story</span><span aria-hidden="true">→</span>
+            </button>
+            <button id="continue-game" class="secondary menu-button" type="button" disabled>
+              <span data-i18n="continue">Continue</span><span id="continue-name"></span>
+            </button>
             <div class="menu-pair menu-tools">
               <button id="open-settings" class="secondary" type="button" data-i18n="settings">Settings</button>
               <button id="open-help" class="secondary" type="button" data-i18n="help">How to play</button>
@@ -52,7 +56,13 @@
           </nav>
           <p id="save-status" class="save-status" role="status"></p>
         </div>
-        <div class="location-card"><span class="location-pin" aria-hidden="true">+</span><span><strong data-i18n="school">Maliwanag Elementary</strong><small data-i18n="location">Iloilo, Western Visayas · A fictional school</small></span></div>
+        <div class="location-card">
+          <span class="location-pin" aria-hidden="true">+</span>
+          <span>
+            <strong data-i18n="school">Maliwanag Elementary</strong>
+            <small data-i18n="location">Iloilo, Western Visayas · A fictional school</small>
+          </span>
+        </div>
         <div class="scene-note"><span class="note-dot"></span><span data-i18n="welcome">Mag-andam kita. Let’s get ready together.</span></div>
         <footer class="title-footer">
           <div class="pillars" aria-label="Four DRRM pillars">
@@ -92,6 +102,8 @@
   <script src="js/scenes/CharacterScene.js"></script>
   <script src="js/scenes/DisasterSelectScene.js"></script>
   <script src="js/systems/world.js"></script>
+  <script src="js/systems/world-water.js"></script>
+  <script src="js/systems/environment.js"></script>
   <script src="js/systems/map-renderer.js"></script>
   <script src="js/systems/decisions.js"></script>
   <script src="js/systems/decision-art.js"></script>
