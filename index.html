@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#173f39">
+  <meta name="description" content="Ligtas Eskwela: Ang Kuwento ng Batang Resilient. An offline, child-friendly DRRM story game set in Iloilo.">
+  <title>Ligtas Eskwela: Ang Kuwento ng Batang Resilient</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app" aria-label="Ligtas Eskwela">
+    <div id="game-frame">
+      <canvas id="backdrop" width="640" height="360" aria-hidden="true"></canvas>
+      <div class="scene-tint" aria-hidden="true"></div>
+      <header class="topbar">
+        <span class="club-mark"><span class="shield" aria-hidden="true">L</span><span data-i18n="club">JUNIOR DRRM CLUB</span></span>
+        <div class="top-actions">
+          <span id="offline-label" class="offline"><i aria-hidden="true"></i><span data-i18n="offline">OFFLINE READY</span></span>
+          <button id="quick-mute" class="small-button" type="button" aria-pressed="false">Sound on</button>
+        </div>
+      </header>
+
+      <section id="boot-screen" class="boot-screen" aria-live="polite">
+        <span class="boot-sun" aria-hidden="true"></span>
+        <h1>Ligtas Eskwela</h1>
+        <p data-i18n="boot">Opening the school gates…</p>
+        <div class="boot-track"><span></span></div>
+        <button id="enter-school" type="button" class="primary" data-i18n="enter" disabled>Enter school</button>
+      </section>
+
+      <section id="title-screen" class="title-screen" hidden aria-labelledby="game-title">
+        <div class="title-copy">
+          <span class="eyebrow" data-i18n="story">A SCHOOL STORY. A SAFER TOMORROW.</span>
+          <h1 id="game-title"><span>Ligtas</span><span>Eskwela<span class="title-dot">.</span></span></h1>
+          <p class="subtitle">Ang Kuwento ng Batang Resilient</p>
+          <p class="intro" data-i18n="intro">Small steps. Brave choices. A school ready together.</p>
+          <nav class="main-menu" aria-label="Main menu">
+            <button id="start-game" class="primary menu-button" type="button"><span data-i18n="start">Start a story</span><span aria-hidden="true">→</span></button>
+            <button id="continue-game" class="secondary menu-button" type="button" disabled><span data-i18n="continue">Continue</span><span id="continue-name"></span></button>
+            <div class="menu-pair menu-tools">
+              <button id="open-settings" class="secondary" type="button" data-i18n="settings">Settings</button>
+              <button id="open-help" class="secondary" type="button" data-i18n="help">How to play</button>
+              <button id="open-art" class="secondary" type="button" data-i18n="artStudio">Art studio</button>
+            </div>
+            <div class="menu-pair future-menu">
+              <button id="open-shop" type="button" data-i18n="shop">DRRM Shop</button>
+              <button id="open-glossary" type="button" data-i18n="glossary">Glossary</button>
+              <button id="open-quick-quiz" type="button" data-i18n="quickQuiz">Quick Quiz</button>
+              <button id="open-teacher" type="button" data-i18n="teacher" hidden>Teacher Mode</button>
+            </div>
+          </nav>
+          <p id="save-status" class="save-status" role="status"></p>
+        </div>
+        <div class="location-card"><span class="location-pin" aria-hidden="true">+</span><span><strong data-i18n="school">Maliwanag Elementary</strong><small data-i18n="location">Iloilo, Western Visayas · A fictional school</small></span></div>
+        <div class="scene-note"><span class="note-dot"></span><span data-i18n="welcome">Mag-andam kita. Let’s get ready together.</span></div>
+        <footer class="title-footer">
+          <div class="pillars" aria-label="Four DRRM pillars">
+            <span><b aria-hidden="true">01</b><span data-i18n="prevent">Prevent</span></span>
+            <span><b aria-hidden="true">02</b><span data-i18n="prepare">Prepare</span></span>
+            <span><b aria-hidden="true">03</b><span data-i18n="respond">Respond</span></span>
+            <span><b aria-hidden="true">04</b><span data-i18n="recover">Recover</span></span>
+          </div>
+          <span class="version" data-i18n="foundation">SCENARIO DIRECTOR REPAIR</span>
+        </footer>
+      </section>
+      <div id="modal-layer" hidden></div>
+      <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    </div>
+    <p class="outside-note" data-i18n="privacy">Made for learning, together. No ads. No tracking. Saves stay on this device.</p>
+  </main>
+  <noscript>This game needs JavaScript. Enable JavaScript, then open index.html again.</noscript>
+  <!-- Classic scripts work when index.html is opened directly, without a server. -->
+  <script src="js/save.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="data/outfits.js"></script>
+  <script src="data/dialogue_common.js"></script>
+  <script src="data/scenarios.js"></script>
+  <script src="data/map_text.js"></script>
+  <script src="data/maps.js"></script>
+  <script src="data/practice.js"></script>
+  <script src="data/minigames.js"></script>
+  <script src="data/typhoon.js"></script>
+  <script src="data/flood.js"></script>
+  <script src="data/earthquake.js"></script>
+  <script src="data/tsunami.js"></script>
+  <script src="data/quiz.js"></script>
+  <script src="data/learning.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/art-preview.js"></script>
+  <script src="js/scenes/CharacterScene.js"></script>
+  <script src="js/scenes/DisasterSelectScene.js"></script>
+  <script src="js/systems/world.js"></script>
+  <script src="js/systems/map-renderer.js"></script>
+  <script src="js/systems/decisions.js"></script>
+  <script src="js/systems/decision-art.js"></script>
+  <script src="js/systems/minigames.js"></script>
+  <script src="js/systems/quake-games.js"></script>
+  <script src="js/systems/coast-games.js"></script>
+  <script src="js/systems/mini-art.js"></script>
+  <script src="js/systems/story.js"></script>
+  <script src="js/systems/weather.js"></script>
+  <script src="js/systems/story-art.js"></script>
+  <script src="js/systems/flood-art.js"></script>
+  <script src="js/systems/quake-art.js"></script>
+  <script src="js/systems/tsunami-art.js"></script>
+  <script src="js/systems/ScenarioDirector.js"></script>
+  <script src="js/systems/ScenarioEffects.js"></script>
+  <script src="js/scenes/MapScene.js"></script>
+  <script src="js/scenes/DecisionScene.js"></script>
+  <script src="js/scenes/MiniGameScene.js"></script>
+  <script src="js/scenes/StoryScene.js"></script>
+  <script src="js/systems/assessment.js"></script>
+  <script src="js/systems/rewards.js"></script>
+  <script src="js/scenes/QuizScene.js"></script>
+  <script src="js/scenes/ResultsScene.js"></script>
+  <script src="js/scenes/ShopScene.js"></script>
+  <script src="js/scenes/LearningScene.js"></script>
+  <script src="js/scenes/TeacherScene.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
